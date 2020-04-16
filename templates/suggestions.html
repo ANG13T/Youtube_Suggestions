@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Suggestions</h1>
+    {% for data in results%}
+        <div class="search">
+            <img src={{data['image']}} alt="videoImage">
+            <h3>{{data['title']}}</h3>
+        </div>
+    {% endfor %}
+
+{% endblock %}
