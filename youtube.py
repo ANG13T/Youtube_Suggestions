@@ -1,18 +1,16 @@
 from youtube_api import YoutubeDataApi
+from secret import youtube_api
 
-api_key = "AIzaSyBizlTmGnA_2TI-cLQxGSuE7tKXkBvDQRM"
-yt = YoutubeDataApi(api_key)
+yt = YoutubeDataApi(youtube_api)
 
 
 
-def getStoicData():
-    searches = yt.search(q='stoicism', max_results=5)
-    searches = [{'title': search['video_title'], 'date': search['video_publish_date'], 'desc': search['video_description'], 'channel': search['channel_title'], 'image': search['video_thumbnail']} for search in searches]
+def getVideoData(search):
+    searches = yt.search(q=search, max_results=10)
+    print(searches[0])
+    searches = [{'title': search['video_title'], 'date': search['video_publish_date'], 'desc': search['video_description'], 'channel': search['channel_title'], 'image': search['video_thumbnail'],  'video_link': "https://www.youtube.com/watch?v=" + search['video_id']} for search in searches]
     return searches
 
-def getBusinessData():
-    pass
-def getMotivationData():
-    pass
 def getChannelData(channel):
     pass
+

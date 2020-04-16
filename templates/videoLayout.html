@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div id="mainSection">
+    <h1>{{title}} Videos</h1>
+    <div class="card-deck">
+    {% for data in results%}
+    <div class="search">
+        <div class="card" style="width: 18rem;">
+            <img src={{data['image']}} class="card-img-top" alt="videoImage">
+            <div class="card-body">
+              <h5 class="card-title">{{data['title']}}</h5>
+              <p class="card-text">{{data['desc']}}</p>
+              <a href={{data['video_link']}} class="btn btn-primary">Watch Video</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

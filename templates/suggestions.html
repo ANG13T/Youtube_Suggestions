@@ -1,12 +1,27 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-<h1>Suggestions</h1>
-    {% for data in results%}
-        <div class="search">
-            <img src={{data['image']}} alt="videoImage">
-            <h3>{{data['title']}}</h3>
+    <div id="mainSection">
+    <h1>Select Video Category</h1>
+    <!-- {% for data in results%}
+    <div class="search">
+        <img src={{data['image']}} alt="videoImage">
+        <h3>{{data['title']}}</h3>
+    </div>
+    {% endfor %} -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Category
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/stocism">Stoicism</a>
+          <a class="dropdown-item" href="/philosophy">Philosophy</a>
+          <a class="dropdown-item" href="/inspiration">Inspiration</a>
+          <a class="dropdown-item" href="/motivation">Motivation</a>
+          <a class="dropdown-item" href="/productivity">Productivity</a>
+          <a class="dropdown-item" href="/business">Business</a>
         </div>
-    {% endfor %}
+      </div>
+    </div>
 
 {% endblock %}

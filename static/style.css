@@ -1,3 +1,21 @@
 #mainNav{
-    height: 40vh
+    height: 10vh
+}
+
+
+body{
+    background-color: white;
+}
+
+#mainSection{
+    margin:auto;
+    text-align:center;
+}
+
+.card{
+    margin: 2vh !important;
+}
+
+.card-deck{
+    margin-left: 5%;
 }
